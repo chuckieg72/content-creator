@@ -3,78 +3,123 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Athena Viral Agency</title>
+    <title>Athena Viral Agency | Premium Content Services</title>
     <style>
-        :root { --neon: #00f2ff; --dark: #0a0a0a; --accent: #ff00ff; }
-        body { background: var(--dark); color: white; font-family: 'Inter', sans-serif; margin: 0; text-align: center; }
-        
-        /* High-Visibility Hero Section */
-        .hero { padding: 100px 20px; background: linear-gradient(rgba(0,0,0,0.8), rgba(0,0,0,0.8)), url('https://images.unsplash.com/photo-1550745165-9bc0b252726f?auto=format&fit=crop&q=80'); background-size: cover; border-bottom: 2px solid var(--neon); }
-        h1 { font-size: 3.5rem; text-transform: uppercase; text-shadow: 0 0 15px var(--neon); margin-bottom: 10px; }
-        .hero-p { font-size: 1.2rem; color: #ccc; margin-bottom: 30px; }
-        
-        /* Main Action Button (Athena Pay Now) */
-        .pay-now-btn { display: inline-block; padding: 20px 50px; background: var(--neon); color: black; font-size: 1.5rem; font-weight: 900; text-decoration: none; border-radius: 50px; text-transform: uppercase; box-shadow: 0 0 30px rgba(0,242,255,0.5); transition: 0.3s; }
-        .pay-now-btn:hover { transform: scale(1.1); box-shadow: 0 0 50px var(--neon); }
-
-        /* Pricing Grid */
-        .grid { display: flex; justify-content: center; gap: 20px; flex-wrap: wrap; padding: 80px 20px; background: #050505; }
-        .card { background: #111; border: 1px solid #333; padding: 30px; border-radius: 15px; width: 300px; transition: 0.3s; }
-        .card:hover { border-color: var(--neon); transform: translateY(-10px); }
-        .featured { border-color: var(--accent); box-shadow: 0 0 15px rgba(255,0,255,0.3); }
-        .price { font-size: 2.5rem; font-weight: bold; color: var(--neon); margin: 15px 0; }
-        
-        .small-btn { display: inline-block; padding: 12px 25px; background: #222; color: white; border: 1px solid var(--neon); text-decoration: none; border-radius: 5px; text-transform: uppercase; font-size: 0.9rem; }
-        .small-btn:hover { background: var(--neon); color: black; }
+        :root { --neon: #00f2ff; --dark: #0a0a0a; --accent: #ff00ff; --glass: rgba(255, 255, 255, 0.05); }
+        body { background: var(--dark); color: white; font-family: 'Inter', sans-serif; margin: 0; line-height: 1.6; text-align: center; }
+        section { padding: 80px 20px; }
+        .container { max-width: 1100px; margin: 0 auto; }
+        .hero { background: linear-gradient(rgba(0,0,0,0.8), rgba(0,0,0,0.8)), url('https://images.unsplash.com/photo-1550745165-9bc0b252726f?auto=format&fit=crop&q=80'); background-size: cover; border-bottom: 2px solid var(--neon); padding: 100px 20px; }
+        h1 { font-size: 3.5rem; text-transform: uppercase; text-shadow: 0 0 15px var(--neon); margin: 0; }
+        .pay-now-btn { display: inline-block; padding: 20px 50px; background: var(--neon); color: black; font-size: 1.5rem; font-weight: 900; text-decoration: none; border-radius: 50px; margin-top: 30px; box-shadow: 0 0 30px rgba(0,242,255,0.5); text-transform: uppercase; transition: 0.3s; }
+        .pay-now-btn:hover { transform: scale(1.05); box-shadow: 0 0 50px var(--neon); }
+        .win-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 30px; margin-top: 40px; }
+        .win-card img { width: 100%; height: 200px; object-fit: cover; border-radius: 10px; border: 1px solid var(--neon); }
+        .grid { display: flex; justify-content: center; gap: 20px; flex-wrap: wrap; background: #050505; padding: 80px 20px; }
+        .card { background: #111; border: 1px solid #333; padding: 25px; border-radius: 15px; width: 280px; transition: 0.3s; }
+        .card:hover { border-color: var(--neon); transform: translateY(-5px); }
+        .price { font-size: 2.5rem; color: var(--neon); margin: 15px 0; font-weight: bold; }
+        .one-off-list { background: var(--glass); padding: 40px; border-radius: 20px; margin-top: 40px; text-align: left; }
+        .service-row { display: flex; justify-content: space-between; padding: 15px 0; border-bottom: 1px solid #222; align-items: center; }
+        .buy-link { color: var(--neon); text-decoration: none; font-weight: bold; text-transform: uppercase; font-size: 0.9rem; border: 1px solid var(--neon); padding: 5px 15px; border-radius: 5px; }
+        .buy-link:hover { background: var(--neon); color: black; }
+        .contact-form { background: #111; padding: 40px; border-radius: 15px; max-width: 600px; margin: 40px auto; border: 1px solid var(--accent); }
+        input, textarea { width: 100%; padding: 12px; margin: 10px 0; background: #222; border: 1px solid #444; color: white; border-radius: 5px; box-sizing: border-box; }
+        .submit-btn { background: var(--accent); color: white; border: none; padding: 15px 40px; cursor: pointer; font-weight: bold; text-transform: uppercase; border-radius: 5px; width: 100%; transition: 0.3s; }
+        .submit-btn:hover { background: #d600d6; }
     </style>
 </head>
 <body>
 
     <section class="hero">
         <h1>Athena AI Edits</h1>
-        <p class="hero-p">High-end content services: Video editing, scheduling, and strategy.</p>
-        
-        <a href="PASTE_YOUR_MAIN_ATHENA_LINK_HERE" class="pay-now-btn">⚡ Athena Pay Now</a>
+        <p>Your partner for high-end content services and viral brand growth.</p>
+        <a href="https://buy.stripe.com/4gM00jdzNfRg8vh278ak000" class="pay-now-btn">⚡ Athena Pay Now</a>
+    </section>
+
+    <section class="container">
+        <h2>Celebrating Our Creator Wins</h2>
+        <div class="win-grid">
+            <div class="win-card">
+                <img src="https://images.unsplash.com/photo-1522202176988-66273c2fd55f?auto=format&fit=crop&q=80" alt="Successful Creators">
+                <p>Scaling to 1M+ views together.</p>
+            </div>
+            <div class="win-card">
+                <img src="https://images.unsplash.com/photo-1517486808906-6ca8b3f04846?auto=format&fit=crop&q=80" alt="Viral Engagement Wins">
+                <p>Celebrating new revenue milestones.</p>
+            </div>
+            <div class="win-card">
+                <img src="https://images.unsplash.com/photo-1556761175-b413da4baf72?auto=format&fit=crop&q=80" alt="Brand Growth Celebration">
+                <p>Dominating niche markets globally.</p>
+            </div>
+        </div>
     </section>
 
     <section class="grid">
         <div class="card">
-            <h3>The Spark</h3>
+            <h3>Starter Spark</h3>
             <div class="price">$10</div>
-            <ul style="list-style: none; padding: 0; text-align: left; margin-bottom: 25px; line-height: 1.8;">
+            <ul style="list-style: none; padding: 0; text-align: left; margin-bottom: 25px;">
                 <li>✅ 1 Viral Edit</li>
-                <li>✅ Basic Captions</li>
+                <li>✅ SEO Captions</li>
                 <li>✅ 48hr Turnaround</li>
             </ul>
-            <a href="PASTE_YOUR_10_DOLLAR_LINK_HERE" class="small-btn">Order Basic</a>
+            <a href="https://buy.stripe.com/4gM00jdzNfRg8vh278ak000" class="buy-link">Order Basic</a>
         </div>
-
-        <div class="card featured">
-            <h3 style="color: var(--accent);">Athena Pro</h3>
-            <div class="price" style="color: var(--accent);">$25</div>
-            <ul style="list-style: none; padding: 0; text-align: left; margin-bottom: 25px; line-height: 1.8;">
-                <li>✅ Premium Viral Edits</li>
+        <div class="card" style="border-color: var(--accent);">
+            <h3 style="color: var(--accent);">Athena Elite</h3>
+            <div class="price" style="color: var(--accent);">$45</div>
+            <ul style="list-style: none; padding: 0; text-align: left; margin-bottom: 25px;">
+                <li>✅ 5 Edits + Strategy</li>
                 <li>✅ Trending Audio Sync</li>
-                <li>✅ SEO Optimized Captions</li>
-                <li>✅ 24hr Priority Delivery</li>
+                <li>✅ Priority Delivery</li>
             </ul>
-            <a href="PASTE_YOUR_25_DOLLAR_LINK_HERE" class="small-btn" style="border-color: var(--accent);">Get Best Value</a>
+            <a href="https://buy.stripe.com/4gM00jdzNfRg8vh278ak000" class="buy-link" style="color: var(--accent); border-color: var(--accent);">Get Best Value</a>
         </div>
-
         <div class="card">
             <h3>Viral King</h3>
-            <div class="price">$50</div>
-            <ul style="list-style: none; padding: 0; text-align: left; margin-bottom: 25px; line-height: 1.8;">
-                <li>✅ 3 Multi-Platform Edits</li>
-                <li>✅ Custom Thumbnails</li>
-                <li>✅ Personal Brand Strategy</li>
+            <div class="price">$99</div>
+            <ul style="list-style: none; padding: 0; text-align: left; margin-bottom: 25px;">
+                <li>✅ 10 Edits + Manager</li>
+                <li>✅ Brand Strategy</li>
                 <li>✅ Same Day Delivery</li>
             </ul>
-            <a href="PASTE_YOUR_50_DOLLAR_LINK_HERE" class="small-btn">Go Viral King</a>
+            <a href="https://buy.stripe.com/4gM00jdzNfRg8vh278ak000" class="buy-link">Go Pro</a>
         </div>
     </section>
 
-    <footer style="padding: 40px; color: #444; font-size: 0.8rem;">
+    <section class="container">
+        <h2>One-Off Expert Services</h2>
+        <div class="one-off-list">
+            <div class="service-row">
+                <span>Custom Thumbnail Design</span>
+                <span>$15</span>
+                <a href="https://buy.stripe.com/4gM00jdzNfRg8vh278ak000" class="buy-link">Add to Cart</a>
+            </div>
+            <div class="service-row">
+                <span>Account Audit & Strategy Call</span>
+                <span>$75</span>
+                <a href="https://buy.stripe.com/4gM00jdzNfRg8vh278ak000" class="buy-link">Book Now</a>
+            </div>
+            <div class="service-row">
+                <span>30-Day Content Calendar</span>
+                <span>$35</span>
+                <a href="https://buy.stripe.com/4gM00jdzNfRg8vh278ak000" class="buy-link">Get Access</a>
+            </div>
+        </div>
+    </section>
+
+    <section class="container">
+        <h2>Personal Touch Consultation</h2>
+        <form class="contact-form">
+            <input type="text" placeholder="Full Name" required>
+            <input type="email" placeholder="Your Email Address" required>
+            <textarea rows="4" placeholder="How can Athena help you win today?" required></textarea>
+            <button type="submit" class="submit-btn">Send Message</button>
+        </form>
+    </section>
+
+    <footer style="padding: 40px; border-top: 1px solid #222; font-size: 0.8rem; color: #555;">
         &copy; 2025 Today's Marketing Solutions LLC. All Rights Reserved.
     </footer>
 
