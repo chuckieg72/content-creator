@@ -123,5 +123,41 @@
         &copy; 2025 Today's Marketing Solutions LLC. All Rights Reserved.
     </footer>
 
-</body>
+</body>// 1. Initialize Stripe with your Public Key
+// Replace 'pk_test_...' with your actual Publishable Key from the Stripe Dashboard
+const stripe = Stripe('pk_test_your_key_here');
+const elements = stripe.elements();
+
+// 2. Create the secure card input box and show it on your page
+const cardElement = elements.create('card');
+cardElement.mount('#card-element');
+
+// 3. Handle the "Save Card" button click
+const form = document.getElementById('payment-form');
+form.addEventListener('submit', async (event) => {
+  event.preventDefault();
+
+  // You must get the 'clientSecret' from your server-side code first
+  const {setupIntent, error} = await stripe.confirmCardSetup(
+    '{{CLIENT_SECRET}}', // This secret comes from your server
+    {
+      payment_method: {
+        card: cardElement,
+        billing_details: {
+          name: 'Customer Name', // You can pull this from your form
+        },
+      },
+    }
+  );
+
+  if (error) {
+    // If the bank's 3DS test fails or there is an error, show it here
+    console.error('Error:', error.message);
+    alert(error.message); 
+  } else {
+    // SUCCESS! The card is now saved and verified with 3DS
+    console.log('Success! Setup status:', setupIntent.status);
+    alert("Card successfully verified and saved!");
+  }
+});
 </html>
