@@ -1,106 +1,105 @@
 
-        </div>
-        <div class="card" style="border-color: var(--accent);">
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Athena Content Creator</title>
+    <script src="https://js.stripe.com/v3/"></script>
+    <style>
+        :root { --accent: #ff007f; --bg: #0a0a0a; --text: #ffffff; }
+        body { background: var(--bg); color: var(--text); font-family: 'Inter', sans-serif; margin: 0; line-height: 1.6; }
+        .container { max-width: 1000px; margin: auto; padding: 60px 20px; text-align: center; }
+        .grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 30px; margin-top: 40px; }
+        .card { border: 1px solid #333; padding: 40px 20px; border-radius: 15px; background: #111; transition: 0.3s; position: relative; }
+        .price { font-size: 2.5rem; font-weight: bold; margin: 20px 0; }
+        .buy-link { display: block; width: 100%; padding: 15px; border: 1px solid #fff; color: #fff; text-decoration: none; border-radius: 8px; font-weight: bold; cursor: pointer; background: transparent; transition: 0.3s; text-align: center; }
+        .buy-link:hover { background: #fff; color: #000; }
+        .one-off-list { background: #111; padding: 30px; border-radius: 15px; text-align: left; margin-top: 40px; border: 1px solid #222; }
+        .service-row { display: flex; justify-content: space-between; align-items: center; padding: 20px 0; border-bottom: 1px solid #222; }
+        .contact-form { max-width: 600px; margin: 60px auto; background: #111; padding: 40px; border-radius: 15px; text-align: left; }
+        input, textarea { width: 100%; padding: 12px; margin: 10px 0 20px; background: #1a1a1a; border: 1px solid #333; color: #fff; border-radius: 5px; box-sizing: border-box; }
+        button.submit { background: var(--accent); color: white; border: none; padding: 15px 30px; border-radius: 5px; cursor: pointer; width: 100%; font-size: 1rem; }
+    </style>
+</head>
+<body>
+
+<section class="container">
+    <h1>Athena Content Creator</h1>
+    <p>Choose your growth package and dominate social media.</p>
+    
+    <div class="grid">
+        <div class="card" style="border-color: var(--accent); transform: scale(1.05); z-index: 1;">
+            <div style="position: absolute; top: -15px; left: 50%; transform: translateX(-50%); background: var(--accent); padding: 5px 15px; border-radius: 20px; font-size: 0.8rem; white-space: nowrap;">BEST VALUE</div>
             <h3 style="color: var(--accent);">Athena Elite</h3>
             <div class="price" style="color: var(--accent);">$45</div>
-            <ul style="list-style: none; padding: 0; text-align: left; margin-bottom: 25px;">
-                <li>✅ 5 Edits + Strategy</li>
+            <ul style="list-style: none; padding: 0; margin-bottom: 30px;">
+                <li>✅ 5 Professional Edits</li>
+                <li>✅ Strategy & Hook Optimization</li>
                 <li>✅ Trending Audio Sync</li>
-                <li>✅ Priority Delivery</li>
+                <li>✅ Priority 48h Delivery</li>
             </ul>
-            <a href="https://buy.stripe.com/4gM00jdzNfRg8vh278ak000" class="buy-link" style="color: var(--accent); border-color: var(--accent);">Get Best Value</a>
+            <a href="https://buy.stripe.com/4gM00jdzNfRg8vh278ak000" class="buy-link" style="border-color: var(--accent); color: var(--accent);">Get Best Value</a>
         </div>
+
         <div class="card">
             <h3>Viral King</h3>
             <div class="price">$99</div>
-            <ul style="list-style: none; padding: 0; text-align: left; margin-bottom: 25px;">
-                <li>✅ 10 Edits + Manager</li>
-                <li>✅ Brand Strategy</li>
+            <ul style="list-style: none; padding: 0; margin-bottom: 30px;">
+                <li>✅ 10 Professional Edits</li>
+                <li>✅ Dedicated Account Manager</li>
+                <li>✅ Full Brand Strategy</li>
                 <li>✅ Same Day Delivery</li>
             </ul>
             <a href="https://buy.stripe.com/4gM00jdzNfRg8vh278ak000" class="buy-link">Go Pro</a>
-        </div><div class="card">
-    <h3>Viral King</h3>
-    <div class="price">$99</div>
-    <ul style="list-style: none; padding: 0; text-align: left; margin-bottom: 25px;">
-        <li>✅ 10 Edits + Manager</li>
-        <li>✅ Brand Strategy</li>
-        <li>✅ Same Day Delivery</li>
-    </ul>
-    <a href="https://buy.stripe.com/4gM00jdzNfRg8vh278ak000" class="buy-link">Go Pro</a>
-</div>
-    </section>
+        </div>
+    </div>
+</section>
 
-    <section class="container">
-        <h2>One-Off Expert Services</h2>
-        <div class="one-off-list">
-            <div class="service-row">
-                <span>Custom Thumbnail Design</span>
-                <span>$15</span>
-                <a href="https://buy.stripe.com/4gM00jdzNfRg8vh278ak000" class="buy-link">Add to Cart</a>
+<section class="container">
+    <h2>One-Off Expert Services</h2>
+    <div class="one-off-list">
+        <div class="service-row">
+            <div>
+                <strong>Custom Thumbnail Design</strong><br>
+                <small>High-CTR designs for YouTube/Reels</small>
             </div>
-            <div class="service-row">
-                <span>Account Audit & Strategy Call</span>
-                <span>$75</span>
-                <a href="https://buy.stripe.com/4gM00jdzNfRg8vh278ak000" class="buy-link">Book Now</a>
-            </div>
-            <div class="service-row">
-                <span>30-Day Content Calendar</span>
-                <span>$35</span>
-                <a href="https://buy.stripe.com/4gM00jdzNfRg8vh278ak000" class="buy-link">Get Access</a>
+            <div style="text-align: right;">
+                <div style="margin-bottom: 10px;">$15</div>
+                <a href="https://buy.stripe.com/4gM00jdzNfRg8vh278ak000" class="buy-link" style="padding: 8px 15px; font-size: 0.8rem; width: auto;">Add to Cart</a>
             </div>
         </div>
-    </section>
+        <div class="service-row">
+            <div>
+                <strong>Account Audit & Strategy Call</strong><br>
+                <small>1-on-1 deep dive into your content</small>
+            </div>
+            <div style="text-align: right;">
+                <div style="margin-bottom: 10px;">$75</div>
+                <a href="https://buy.stripe.com/4gM00jdzNfRg8vh278ak000" class="buy-link" style="padding: 8px 15px; font-size: 0.8rem; width: auto;">Book Now</a>
+            </div>
+        </div>
+    </div>
+</section>
 
-    <section class="container">
-        <h2>Personal Touch Consultation</h2>
-        <form class="contact-form" action="https://formspree.io/f/mqekgvdz" method="POST">
-            <input type="text" name="name" placeholder="Full Name" required>
-            <input type="email" name="email" placeholder="Your Email Address" required>
-            <textarea name="message" rows="4" placeholder="How can Athena help you win today?" required></textarea>
-            <button type="submit" class="submit-btn">Send Message</button>
-        </form>
-    </section>
+<section class="contact-form">
+    <h2>Need a Custom Solution?</h2>
+    <p>Send us a message and we'll get back to you within 24 hours.</p>
+    <form action="https://formspree.io/f/YOUR_FORMSPREE_ID" method="POST">
+        <label>Name</label>
+        <input type="text" name="name" placeholder="Your Name" required>
+        <label>Email</label>
+        <input type="email" name="_replyto" placeholder="email@example.com" required>
+        <label>Message</label>
+        <textarea name="message" rows="4" placeholder="Tell us about your project..." required></textarea>
+        <button type="submit" class="submit">Send Message</button>
+    </form>
+</section>
 
-    <footer style="padding: 40px; border-top: 1px solid #222; font-size: 0.8rem; color: #555;">
-        &copy; 2025 Today's Marketing Solutions LLC. All Rights Reserved.
-    </footer>
+<script>
+    // Initializing Stripe with your Live Publishable Key
+    const stripe = Stripe('pk_live_51KNXXgH5oCka4jIDKwxEW5FmtQ7sRdg0G6qSZCrVQ2i1BFNTmNo2pL0YjccvVHT2u9Jsx2t02DRVcy7bvT9P3MHA00Keoi7OFb');
+</script>
 
-</body>// 1. Initialize Stripe with your Public Key
-// Replace 'pk_test_...' with your actual Publishable Key from the Stripe Dashboard
-const stripe = Stripe('pk_test_your_key_here');
-const elements = stripe.elements();
-
-// 2. Create the secure card input box and show it on your page
-const cardElement = elements.create('card');
-cardElement.mount('#card-element');
-
-// 3. Handle the "Save Card" button click
-const form = document.getElementById('payment-form');
-form.addEventListener('submit', async (event) => {
-  event.preventDefault();
-
-  // You must get the 'clientSecret' from your server-side code first
-  const {setupIntent, error} = await stripe.confirmCardSetup(
-    '{{CLIENT_SECRET}}', // This secret comes from your server
-    {
-      payment_method: {
-        card: cardElement,
-        billing_details: {
-          name: 'Customer Name', // You can pull this from your form
-        },
-      },
-    }
-  );
-
-  if (error) {
-    // If the bank's 3DS test fails or there is an error, show it here
-    console.error('Error:', error.message);
-    alert(error.message); 
-  } else {
-    // SUCCESS! The card is now saved and verified with 3DS
-    console.log('Success! Setup status:', setupIntent.status);
-    alert("Card successfully verified and saved!");
-  }
-});
+</body>
 </html>
