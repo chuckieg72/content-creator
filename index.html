@@ -1,104 +1,123 @@
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Athena Content Creator</title>
-    <script src="https://js.stripe.com/v3/"></script>
+    <title>Payment Portal | Mindful Nutrition</title>
     <style>
-        :root { --accent: #ff007f; --bg: #0a0a0a; --text: #ffffff; }
-        body { background: var(--bg); color: var(--text); font-family: 'Inter', sans-serif; margin: 0; line-height: 1.6; }
-        .container { max-width: 1000px; margin: auto; padding: 60px 20px; text-align: center; }
-        .grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 30px; margin-top: 40px; }
-        .card { border: 1px solid #333; padding: 40px 20px; border-radius: 15px; background: #111; transition: 0.3s; position: relative; }
-        .price { font-size: 2.5rem; font-weight: bold; margin: 20px 0; }
-        .buy-link { display: block; width: 100%; padding: 15px; border: 1px solid #fff; color: #fff; text-decoration: none; border-radius: 8px; font-weight: bold; cursor: pointer; background: transparent; transition: 0.3s; text-align: center; }
-        .buy-link:hover { background: #fff; color: #000; }
-        .one-off-list { background: #111; padding: 30px; border-radius: 15px; text-align: left; margin-top: 40px; border: 1px solid #222; }
-        .service-row { display: flex; justify-content: space-between; align-items: center; padding: 20px 0; border-bottom: 1px solid #222; }
-        .contact-form { max-width: 600px; margin: 60px auto; background: #111; padding: 40px; border-radius: 15px; text-align: left; }
-        input, textarea { width: 100%; padding: 12px; margin: 10px 0 20px; background: #1a1a1a; border: 1px solid #333; color: #fff; border-radius: 5px; box-sizing: border-box; }
-        button.submit { background: var(--accent); color: white; border: none; padding: 15px 30px; border-radius: 5px; cursor: pointer; width: 100%; font-size: 1rem; }
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+            background-color: #f9f9f9;
+            margin: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+        }
+        .card {
+            background: white;
+            padding: 40px;
+            border-radius: 12px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.08);
+            max-width: 400px;
+            width: 90%;
+            text-align: center;
+            border: 1px solid #eee;
+        }
+        .brand {
+            font-size: 14px;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            color: #666;
+            margin-bottom: 8px;
+        }
+        h1 {
+            font-size: 24px;
+            margin-bottom: 30px;
+            color: #000;
+        }
+        .input-box {
+            position: relative;
+            margin-bottom: 25px;
+        }
+        .input-box span {
+            position: absolute;
+            left: 15px;
+            top: 50%;
+            transform: translateY(-50%);
+            font-size: 20px;
+            font-weight: bold;
+        }
+        input {
+            width: 100%;
+            padding: 15px 15px 15px 35px;
+            font-size: 22px;
+            border: 2px solid #eee;
+            border-radius: 8px;
+            box-sizing: border-box;
+            outline: none;
+        }
+        input:focus {
+            border-color: #000;
+        }
+        button {
+            width: 100%;
+            background: #000;
+            color: #fff;
+            padding: 18px;
+            font-size: 16px;
+            font-weight: 600;
+            border: none;
+            border-radius: 8px;
+            cursor: pointer;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+        button:hover {
+            background: #333;
+        }
+        .secure-text {
+            margin-top: 20px;
+            font-size: 12px;
+            color: #999;
+        }
     </style>
 </head>
 <body>
 
-<section class="container">
-    <h1>Athena Content Creator</h1>
-    <p>Choose your growth package and dominate social media.</p>
+<div class="card">
+    <div class="brand">Mindful Nutrition</div>
+    <h1>Payment Portal</h1>
     
-    <div class="grid">
-        <div class="card" style="border-color: var(--accent); transform: scale(1.05); z-index: 1;">
-            <div style="position: absolute; top: -15px; left: 50%; transform: translateX(-50%); background: var(--accent); padding: 5px 15px; border-radius: 20px; font-size: 0.8rem; white-space: nowrap;">BEST VALUE</div>
-            <h3 style="color: var(--accent);">Athena Elite</h3>
-            <div class="price" style="color: var(--accent);">$45</div>
-            <ul style="list-style: none; padding: 0; margin-bottom: 30px;">
-                <li>✅ 5 Professional Edits</li>
-                <li>✅ Strategy & Hook Optimization</li>
-                <li>✅ Trending Audio Sync</li>
-                <li>✅ Priority 48h Delivery</li>
-            </ul>
-            <a href="https://buy.stripe.com/4gM00jdzNfRg8vh278ak000" class="buy-link" style="border-color: var(--accent); color: var(--accent);">Get Best Value</a>
-        </div>
-
-        <div class="card">
-            <h3>Viral King</h3>
-            <div class="price">$99</div>
-            <ul style="list-style: none; padding: 0; margin-bottom: 30px;">
-                <li>✅ 10 Professional Edits</li>
-                <li>✅ Dedicated Account Manager</li>
-                <li>✅ Full Brand Strategy</li>
-                <li>✅ Same Day Delivery</li>
-            </ul>
-            <a href="https://buy.stripe.com/4gM00jdzNfRg8vh278ak000" class="buy-link">Go Pro</a>
-        </div>
+    <div class="input-box">
+        <span>$</span>
+        <input type="number" id="payAmount" placeholder="0.00" step="0.01">
     </div>
-</section>
 
-<section class="container">
-    <h2>One-Off Expert Services</h2>
-    <div class="one-off-list">
-        <div class="service-row">
-            <div>
-                <strong>Custom Thumbnail Design</strong><br>
-                <small>High-CTR designs for YouTube/Reels</small>
-            </div>
-            <div style="text-align: right;">
-                <div style="margin-bottom: 10px;">$15</div>
-                <a href="https://buy.stripe.com/4gM00jdzNfRg8vh278ak000" class="buy-link" style="padding: 8px 15px; font-size: 0.8rem; width: auto;">Add to Cart</a>
-            </div>
-        </div>
-        <div class="service-row">
-            <div>
-                <strong>Account Audit & Strategy Call</strong><br>
-                <small>1-on-1 deep dive into your content</small>
-            </div>
-            <div style="text-align: right;">
-                <div style="margin-bottom: 10px;">$75</div>
-                <a href="https://buy.stripe.com/4gM00jdzNfRg8vh278ak000" class="buy-link" style="padding: 8px 15px; font-size: 0.8rem; width: auto;">Book Now</a>
-            </div>
-        </div>
+    <button onclick="sendToPay()">Complete Payment</button>
+    
+    <div class="secure-text">
+        🔒 Secured by Squarespace Commerce
     </div>
-</section>
-
-<section class="contact-form">
-    <h2>Need a Custom Solution?</h2>
-    <p>Send us a message and we'll get back to you within 24 hours.</p>
-    <form action="https://formspree.io/f/YOUR_FORMSPREE_ID" method="POST">
-        <label>Name</label>
-        <input type="text" name="name" placeholder="Your Name" required>
-        <label>Email</label>
-        <input type="email" name="_replyto" placeholder="email@example.com" required>
-        <label>Message</label>
-        <textarea name="message" rows="4" placeholder="Tell us about your project..." required></textarea>
-        <button type="submit" class="submit">Send Message</button>
-    </form>
-</section>
+</div>
 
 <script>
-    // Initializing Stripe with your Live Publishable Key
-    const stripe = Stripe('pk_live_51KNXXgH5oCka4jIDKwxEW5FmtQ7sRdg0G6qSZCrVQ2i1BFNTmNo2pL0YjccvVHT2u9Jsx2t02DRVcy7bvT9P3MHA00Keoi7OFb');
+    function sendToPay() {
+        const amount = document.getElementById('payAmount').value;
+        if (!amount || amount <= 0) {
+            alert("Please enter an amount.");
+            return;
+        }
+
+        // Your specific link from the screenshot
+        const base = "https://checkout.squarespace.com/pay/3b7b4482-e3e6-4e7b-834c-312c704d6b38";
+        
+        // Convert to cents
+        const cents = Math.round(parseFloat(amount) * 100);
+        
+        // Redirect to secure checkout
+        window.location.href = base + "?amount=" + cents;
+    }
 </script>
 
 </body>
