@@ -7,34 +7,19 @@
     <style>
         :root { --brand: #000; --bg: #ffffff; --light: #f9f9f9; }
         body { font-family: 'Helvetica Neue', Arial, sans-serif; margin: 0; color: #333; line-height: 1.6; }
-        
-        /* Navigation */
         nav { padding: 25px 5%; border-bottom: 1px solid #eee; display: flex; justify-content: space-between; align-items: center; background: white; }
         .logo { font-weight: bold; letter-spacing: 3px; text-transform: uppercase; font-size: 1.2rem; }
-
-        /* Hero Section - Professional Branding */
-        .hero { padding: 100px 5%; text-align: center; background: var(--light); }
-        .hero h1 { font-size: 3rem; letter-spacing: 2px; margin-bottom: 15px; text-transform: uppercase; font-weight: 900; }
-        .hero p { font-size: 1.2rem; color: #555; max-width: 800px; margin: 0 auto; }
-
-        /* Services Grid */
-        .services { padding: 80px 5%; max-width: 1100px; margin: 0 auto; display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 30px; }
-        .service-item { padding: 40px; border: 1px solid #eee; border-radius: 16px; background: #fff; box-shadow: 0 4px 6px rgba(0,0,0,0.02); transition: 0.3s; }
-        .service-item:hover { transform: translateY(-5px); box-shadow: 0 10px 20px rgba(0,0,0,0.05); }
-        .service-item h3 { margin-top: 0; color: var(--brand); text-transform: uppercase; font-size: 1.1rem; letter-spacing: 1px; }
-
-        /* Payment Section */
-        .payment-area { padding: 100px 5%; background: var(--brand); color: white; text-align: center; }
+        .hero { padding: 60px 5%; text-align: center; background: var(--light); }
+        .hero h1 { font-size: 2.8rem; letter-spacing: 2px; text-transform: uppercase; font-weight: 900; margin-bottom: 10px; }
+        .services { padding: 40px 5%; max-width: 1100px; margin: 0 auto; display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 20px; }
+        .service-item { padding: 30px; border: 1px solid #eee; border-radius: 12px; background: #fff; text-align: left; box-shadow: 0 4px 6px rgba(0,0,0,0.02); }
+        .service-item h3 { margin-top: 0; font-size: 1rem; text-transform: uppercase; letter-spacing: 1px; color: var(--brand); border-bottom: 1px solid #eee; padding-bottom: 10px; }
+        .service-price { font-weight: bold; font-size: 1.2rem; color: #555; margin-top: 10px; display: block; }
+        .payment-area { padding: 80px 5%; background: var(--brand); color: white; text-align: center; }
         .pay-card { background: white; color: #333; max-width: 450px; margin: 0 auto; padding: 50px; border-radius: 20px; box-shadow: 0 20px 40px rgba(0,0,0,0.2); }
-        
-        .input-group { position: relative; margin: 35px 0; }
-        .input-group span { position: absolute; left: 20px; top: 50%; transform: translateY(-50%); font-weight: bold; font-size: 1.6rem; color: #888; }
-        input { width: 100%; padding: 18px 18px 18px 50px; font-size: 1.6rem; border: 2px solid #eee; border-radius: 12px; box-sizing: border-box; outline: none; transition: 0.3s; font-weight: bold; }
-        input:focus { border-color: var(--brand); }
-
-        .pay-btn { width: 100%; background: var(--brand); color: white; padding: 22px; border: none; border-radius: 12px; font-weight: bold; cursor: pointer; text-transform: uppercase; letter-spacing: 2px; font-size: 1.1rem; transition: 0.3s; }
-        .pay-btn:hover { background: #333; transform: scale(1.02); }
-        .secure-note { margin-top: 25px; font-size: 0.7rem; color: #999; letter-spacing: 1px; }
+        input { width: 100%; padding: 18px; margin: 20px 0; border: 2px solid #eee; border-radius: 12px; font-size: 1.4rem; box-sizing: border-box; outline: none; font-weight: bold; text-align: center; }
+        .pay-btn { width: 100%; background: var(--brand); color: white; padding: 22px; border: none; border-radius: 12px; font-weight: bold; cursor: pointer; text-transform: uppercase; letter-spacing: 2px; font-size: 1.1rem; }
+        .secure-note { margin-top: 25px; font-size: 0.7rem; color: #bbb; text-transform: uppercase; letter-spacing: 1px; }
     </style>
 </head>
 <body>
@@ -43,54 +28,69 @@
 
 <section class="hero">
     <h1>ATHENA STRATEGIC SOLUTIONS</h1>
-    <p>Professional guidance for high-impact growth, executive-level consulting, and strategic wellness integration.</p>
+    <p>Professional guidance for high-impact growth and executive-level consulting.</p>
 </section>
 
 <section class="services">
     <div class="service-item">
-        <h3>Executive Strategy</h3>
-        <p>Comprehensive consulting sessions focusing on high-level operational efficiency and leadership alignment.</p>
+        <h3>Foundational Review</h3>
+        <p>Comprehensive audit of business goals and digital presence.</p>
+        <span class="service-price">$99.00</span>
     </div>
     <div class="service-item">
-        <h3>Digital Presence</h3>
-        <p>Strategic branding and content development to establish a powerful, professional digital identity.</p>
+        <h3>Digital Identity</h3>
+        <p>Strategic branding, content scaling, and professional positioning.</p>
+        <span class="service-price">$499.00</span>
     </div>
     <div class="service-item">
-        <h3>Business Optimization</h3>
-        <p>Tailored operational solutions designed to scale your impact, efficiency, and professional results.</p>
+        <h3>Executive Optimization</h3>
+        <p>Operational deep dive and leadership alignment strategies.</p>
+        <span class="service-price">$1,250.00</span>
     </div>
 </section>
 
 <section class="payment-area">
     <div class="pay-card">
         <h3 style="margin-top:0; letter-spacing: 1px;">ATHENA SECURE PORTAL</h3>
-        <p style="color: #666; font-size: 0.95rem;">Enter the professional service amount below to proceed.</p>
+        <p style="color: #666; font-size: 0.95rem;">Enter the service amount to generate your invoice.</p>
         
-        <div class="input-group">
-            <span>$</span>
+        <div style="position: relative;">
             <input type="number" id="finalAmt" placeholder="0.00" step="0.01">
         </div>
 
         <button class="pay-btn" onclick="processPayment()">COMPLETE PAYMENT</button>
         
-        <div class="secure-note">🔒 ENCRYPTED CHECKOUT SECURED BY SQUARESPACE</div>
+        <div class="secure-note">🔒 SERVICE TYPE AUTOMATICALLY ASSIGNED TO INVOICE</div>
     </div>
 </section>
 
 <script>
     function processPayment() {
-        const amt = document.getElementById('finalAmt').value;
-        if(!amt || amt <= 0) { 
-            alert("Please enter a valid amount to proceed."); 
+        const amtInput = document.getElementById('finalAmt').value;
+        if(!amtInput || amtInput <= 0) { 
+            alert("Please enter a valid amount."); 
             return; 
         }
         
-        const cents = Math.round(parseFloat(amt) * 100);
-        
-        // This is the active pay link you provided
+        const amount = parseFloat(amtInput);
+        let serviceName = "General Strategy Consulting";
+
+        // AUTOMATIC SERVICE MATCHING LOGIC
+        if (amount === 99) {
+            serviceName = "Foundational Review";
+        } else if (amount === 499) {
+            serviceName = "Digital Identity";
+        } else if (amount === 1250) {
+            serviceName = "Executive Optimization";
+        } else {
+            serviceName = "Custom Strategic Service (Invoice: $" + amount + ")";
+        }
+
+        const cents = Math.round(amount * 100);
         const baseLink = "https://checkout.squarespace.com/pay/3b7b4482-e3e6-4e7b-834c-312c704d6b38";
         
-        window.location.href = baseLink + "?amount=" + cents;
+        // Sends the dollar amount and the AUTO-MATCHED service name to your records
+        window.location.href = baseLink + "?amount=" + cents + "&memo=" + encodeURIComponent(serviceName);
     }
 </script>
 
