@@ -3,122 +3,36 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Payment Portal | Mindful Nutrition</title>
+    <title>Athena Payment Portal</title>
     <style>
-        body {
-            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
-            background-color: #f9f9f9;
-            margin: 0;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            min-height: 100vh;
-        }
-        .card {
-            background: white;
-            padding: 40px;
-            border-radius: 12px;
-            box-shadow: 0 10px 30px rgba(0,0,0,0.08);
-            max-width: 400px;
-            width: 90%;
-            text-align: center;
-            border: 1px solid #eee;
-        }
-        .brand {
-            font-size: 14px;
-            letter-spacing: 2px;
-            text-transform: uppercase;
-            color: #666;
-            margin-bottom: 8px;
-        }
-        h1 {
-            font-size: 24px;
-            margin-bottom: 30px;
-            color: #000;
-        }
-        .input-box {
-            position: relative;
-            margin-bottom: 25px;
-        }
-        .input-box span {
-            position: absolute;
-            left: 15px;
-            top: 50%;
-            transform: translateY(-50%);
-            font-size: 20px;
-            font-weight: bold;
-        }
-        input {
-            width: 100%;
-            padding: 15px 15px 15px 35px;
-            font-size: 22px;
-            border: 2px solid #eee;
-            border-radius: 8px;
-            box-sizing: border-box;
-            outline: none;
-        }
-        input:focus {
-            border-color: #000;
-        }
-        button {
-            width: 100%;
-            background: #000;
-            color: #fff;
-            padding: 18px;
-            font-size: 16px;
-            font-weight: 600;
-            border: none;
-            border-radius: 8px;
-            cursor: pointer;
-            text-transform: uppercase;
-            letter-spacing: 1px;
-        }
-        button:hover {
-            background: #333;
-        }
-        .secure-text {
-            margin-top: 20px;
-            font-size: 12px;
-            color: #999;
-        }
+        body { font-family: -apple-system, sans-serif; background-color: #f9f9f9; margin: 0; display: flex; justify-content: center; align-items: center; min-height: 100vh; }
+        .card { background: white; padding: 40px; border-radius: 12px; box-shadow: 0 10px 30px rgba(0,0,0,0.08); max-width: 400px; width: 90%; text-align: center; border: 1px solid #eee; }
+        .brand { font-size: 14px; letter-spacing: 2px; text-transform: uppercase; color: #666; margin-bottom: 8px; }
+        h1 { font-size: 24px; margin-bottom: 30px; color: #000; }
+        .input-box { position: relative; margin-bottom: 25px; }
+        .input-box span { position: absolute; left: 15px; top: 50%; transform: translateY(-50%); font-size: 20px; font-weight: bold; }
+        input { width: 100%; padding: 15px 15px 15px 35px; font-size: 22px; border: 2px solid #eee; border-radius: 8px; box-sizing: border-box; outline: none; }
+        button { width: 100%; background: #000; color: #fff; padding: 18px; font-size: 16px; font-weight: 600; border: none; border-radius: 8px; cursor: pointer; text-transform: uppercase; }
     </style>
 </head>
 <body>
-
 <div class="card">
-    <div class="brand">Mindful Nutrition</div>
+    <div class="brand">Athena</div>
     <h1>Payment Portal</h1>
-    
     <div class="input-box">
         <span>$</span>
         <input type="number" id="payAmount" placeholder="0.00" step="0.01">
     </div>
-
     <button onclick="sendToPay()">Complete Payment</button>
-    
-    <div class="secure-text">
-        🔒 Secured by Squarespace Commerce
-    </div>
 </div>
-
 <script>
     function sendToPay() {
         const amount = document.getElementById('payAmount').value;
-        if (!amount || amount <= 0) {
-            alert("Please enter an amount.");
-            return;
-        }
-
-        // Your specific link from the screenshot
-        const base = "https://checkout.squarespace.com/pay/3b7b4482-e3e6-4e7b-834c-312c704d6b38";
-        
-        // Convert to cents
+        if (!amount || amount <= 0) { alert("Please enter an amount."); return; }
         const cents = Math.round(parseFloat(amount) * 100);
-        
-        // Redirect to secure checkout
+        const base = "https://checkout.squarespace.com/pay/3b7b4482-e3e6-4e7b-834c-312c704d6b38";
         window.location.href = base + "?amount=" + cents;
     }
 </script>
-
 </body>
 </html>
