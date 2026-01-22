@@ -3,36 +3,108 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Athena Payment Portal</title>
+    <title>Athena | Wellness & Strategic Solutions</title>
     <style>
-        body { font-family: -apple-system, sans-serif; background-color: #f9f9f9; margin: 0; display: flex; justify-content: center; align-items: center; min-height: 100vh; }
-        .card { background: white; padding: 40px; border-radius: 12px; box-shadow: 0 10px 30px rgba(0,0,0,0.08); max-width: 400px; width: 90%; text-align: center; border: 1px solid #eee; }
-        .brand { font-size: 14px; letter-spacing: 2px; text-transform: uppercase; color: #666; margin-bottom: 8px; }
-        h1 { font-size: 24px; margin-bottom: 30px; color: #000; }
-        .input-box { position: relative; margin-bottom: 25px; }
-        .input-box span { position: absolute; left: 15px; top: 50%; transform: translateY(-50%); font-size: 20px; font-weight: bold; }
-        input { width: 100%; padding: 15px 15px 15px 35px; font-size: 22px; border: 2px solid #eee; border-radius: 8px; box-sizing: border-box; outline: none; }
-        button { width: 100%; background: #000; color: #fff; padding: 18px; font-size: 16px; font-weight: 600; border: none; border-radius: 8px; cursor: pointer; text-transform: uppercase; }
+        :root { --brand-black: #000; --brand-white: #fff; --gray: #f9f9f9; }
+        body { font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif; margin: 0; padding: 0; background: var(--brand-white); color: var(--brand-black); line-height: 1.6; }
+        
+        /* Navigation */
+        nav { padding: 25px 5%; display: flex; justify-content: space-between; align-items: center; border-bottom: 1px solid #eee; }
+        .logo { font-size: 1.2rem; font-weight: bold; letter-spacing: 3px; text-transform: uppercase; }
+
+        /* Hero Section */
+        .hero { padding: 80px 5%; text-align: center; background: var(--gray); }
+        .hero h1 { font-size: 2.5rem; margin-bottom: 15px; text-transform: uppercase; letter-spacing: 2px; }
+        .hero p { font-size: 1.1rem; max-width: 600px; margin: 0 auto; color: #555; }
+
+        /* Payment Section */
+        #payment { padding: 60px 5%; text-align: center; }
+        .payment-card { 
+            background: white; 
+            max-width: 450px; 
+            margin: 0 auto; 
+            padding: 40px; 
+            border-radius: 12px; 
+            border: 1px solid #e0e0e0; 
+            box-shadow: 0 4px 20px rgba(0,0,0,0.05); 
+        }
+        .payment-card h2 { margin-top: 0; font-size: 1.5rem; }
+        
+        /* Input Logic */
+        .input-group { position: relative; margin: 30px 0; }
+        .currency { position: absolute; left: 15px; top: 50%; transform: translateY(-50%); font-size: 1.5rem; font-weight: bold; }
+        input[type="number"] { 
+            width: 100%; 
+            padding: 15px 15px 15px 40px; 
+            font-size: 1.5rem; 
+            border: 2px solid #eee; 
+            border-radius: 8px; 
+            box-sizing: border-box; 
+            outline: none; 
+        }
+        input:focus { border-color: var(--brand-black); }
+
+        .btn-pay { 
+            width: 100%; 
+            background: var(--brand-black); 
+            color: white; 
+            padding: 20px; 
+            border: none; 
+            border-radius: 8px; 
+            font-size: 1rem; 
+            font-weight: bold; 
+            cursor: pointer; 
+            text-transform: uppercase; 
+            letter-spacing: 1px; 
+        }
+        .btn-pay:hover { opacity: 0.85; }
+        .secure-note { margin-top: 15px; font-size: 0.75rem; color: #999; text-transform: uppercase; }
     </style>
 </head>
 <body>
-<div class="card">
-    <div class="brand">Athena</div>
-    <h1>Payment Portal</h1>
-    <div class="input-box">
-        <span>$</span>
-        <input type="number" id="payAmount" placeholder="0.00" step="0.01">
+
+<nav>
+    <div class="logo">Athena</div>
+</nav>
+
+<section class="hero">
+    <h1>Strategic Wellness Solutions</h1>
+    <p>Empowering your journey with professional coaching and comprehensive marketing strategies.</p>
+</section>
+
+<section id="payment">
+    <div class="payment-card">
+        <div style="font-size: 12px; letter-spacing: 2px; color: #888; margin-bottom: 10px; text-transform: uppercase;">Payment Portal</div>
+        <h2>Complete Your Transaction</h2>
+        <p style="color: #666; font-size: 0.9rem;">Please enter the amount agreed upon for your service.</p>
+        
+        <div class="input-group">
+            <span class="currency">$</span>
+            <input type="number" id="userAmount" placeholder="0.00" step="0.01">
+        </div>
+
+        <button class="btn-pay" onclick="handlePayment()">Complete Payment</button>
+        
+        <div class="secure-note">🔒 Secure Checkout via Squarespace</div>
     </div>
-    <button onclick="sendToPay()">Complete Payment</button>
-</div>
+</section>
+
 <script>
-    function sendToPay() {
-        const amount = document.getElementById('payAmount').value;
-        if (!amount || amount <= 0) { alert("Please enter an amount."); return; }
-        const cents = Math.round(parseFloat(amount) * 100);
+    function handlePayment() {
+        const amt = document.getElementById('userAmount').value;
+        if (!amt || amt <= 0) {
+            alert("Please enter a valid amount to proceed.");
+            return;
+        }
+
+        // Athena's Dedicated Pay Link
         const base = "https://checkout.squarespace.com/pay/3b7b4482-e3e6-4e7b-834c-312c704d6b38";
+        const cents = Math.round(parseFloat(amt) * 100);
+        
+        // Direct to secure card transaction
         window.location.href = base + "?amount=" + cents;
     }
 </script>
+
 </body>
 </html>
