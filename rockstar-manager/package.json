@@ -1,0 +1,1 @@
+{"name":"tms-rockstar-manager","version":"0.2.0","private":true,"type":"module","scripts":{"check":"node src/healthcheck.js","demo":"node src/cli.js"},"dependencies":{"@fal-ai/client":"^1.6.2"}}
