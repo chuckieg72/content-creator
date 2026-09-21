@@ -1,0 +1,1 @@
+import {job} from "./jobs.js";import {RockstarManager} from "./manager.js";const m=new RockstarManager();const j=job("content_marketing","Prepare a buyer-focused TMS content package");console.log(JSON.stringify(m.plan(j),null,2));
