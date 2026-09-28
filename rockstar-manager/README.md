@@ -1,29 +1,41 @@
-# TMS Rockstar Manager v0.1
+# TMS Rockstar Manager
 
-Internal prototype for Today’s Marketing Solutions.
+Node.js manager prototype for Today’s Marketing Solutions.
 
-## Goal
-Turn a plain-English business request into a managed AI workflow that can plan the work, select approved tools, execute supported actions, quality-check the result, and stop for human approval when money, publishing, account changes, or other consequential actions are involved.
+## Run a real text job
 
-## Core loop
-REQUEST → PLAN → TOOL SELECT → EXECUTE → SCORE → CORRECT → APPROVE/DELIVER → LEARN
+Requires Node.js 20+ and an OpenAI API key configured privately as `OPENAI_API_KEY`. A ChatGPT subscription by itself is not an API credential.
 
-## First use case
-TMS asks: “Build tomorrow’s sales video for the Rockstar Employee offer.”
+```sh
+npm install
+npm test
+npm run check
+npm run job -- "Prepare tomorrow's sales content package for [offer and audience]"
+```
 
-The Manager should:
-1. Clarify the actual business outcome only if materially necessary.
-2. Build a short execution plan.
-3. Use the TMS tool registry to choose capabilities.
-4. Create/research/script assets.
-5. Use connected video/audio/image tools when approved and available.
-6. Run the TMS acceptance test.
-7. Return finished assets plus anything that still requires Chuck’s approval.
-8. Record what worked, failed, cost money, and should change next time.
+The manager calls the OpenAI Responses API, creates a completed text draft, and saves the full job result under the ignored `output/` directory. Choose a workflow with `--type`, for example:
 
-## Safety / authority
-The Manager may draft, research, organize, score, and create non-consequential assets without asking repeatedly.
-It must stop for approval before purchases, subscriptions, billing changes, publishing, sending external communications unless previously authorized, deleting data, changing account/security settings, or other irreversible/high-impact actions.
+```sh
+npm run job -- --type social_content "Create three platform-ready posts from the approved promotion path"
+```
 
-## Product principle
-Build and prove this system inside TMS before selling it. Do not claim a customer outcome that TMS has not actually validated.
+Set real credentials in a hosting provider's secret manager or a local ignored `.env`. Never put credentials in Git or chat. The default model is `gpt-5-mini`; change it with `OPENAI_MODEL`. The output-token ceiling is controlled by `AGENT_MAX_OUTPUT_TOKENS`.
+
+## What this version can do
+
+- Execute a text job and save its deliverable, rather than only print a plan.
+- Apply the TMS B.O.S.S. criteria and existing job workflow.
+- Report model usage when the API returns it.
+- Keep publish, spend, and external-send actions behind approval gates.
+
+## What still needs to be connected
+
+This is not yet an all-purpose autonomous operator. Runtime hosting, private API credentials, a persistent job/spend ledger, allowance enforcement, web research, and business-channel integrations still need implementation and verification. The fal.ai adapter is separate; paid video generation must not run until a measured allowance is enforced. Publishing and sending must remain blocked until each destination is connected and explicitly authorized.
+
+## Authority
+
+Within configured scope, the agent should finish work and return a result instead of stopping at a plan. It must stop before spending beyond a verified allowance, publishing/sending without authority, changing accounts/security/billing/domains/payments, or deleting data. Never present a draft as published or an unverified claim as evidence.
+
+## TMS acceptance standard
+
+Check outcome, accuracy, completeness, customer fit, standards, clarity, efficiency, risk, improvement, and reusability. Never invent customer results, sales, views, testimonials, product capabilities, or research sources.
