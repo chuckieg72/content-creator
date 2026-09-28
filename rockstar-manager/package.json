@@ -1,0 +1,14 @@
+{
+  "name": "tms-rockstar-manager",
+  "version": "0.1.0",
+  "private": true,
+  "description": "TMS Rockstar Manager backend",
+  "type": "module",
+  "scripts": {
+    "start": "node src/server.js",
+    "check": "node --check src/server.js && node --check src/kit.js"
+  },
+  "engines": {
+    "node": ">=20"
+  }
+}
