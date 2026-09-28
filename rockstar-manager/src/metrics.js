@@ -1,0 +1,2 @@
+export const metricNames=["views","reach","watch_time","retention","clicks","email_subscribers","purchases","revenue","conversion_rate","revenue_per_1000_relevant_views"];
+export function recordMetric(state,name,value,source,observedAt=new Date().toISOString()){if(!metricNames.includes(name))throw new Error("UNKNOWN_METRIC:"+name);return {...state,metrics:{...state.metrics,[name]:{value,source,observedAt,verified:true}}}}

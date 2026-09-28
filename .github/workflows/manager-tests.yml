@@ -1,0 +1,29 @@
+name: Manager tests
+
+on:
+  push:
+    branches: [rockstar-manager-foundation]
+    paths:
+      - "rockstar-manager/**"
+      - ".github/workflows/manager-tests.yml"
+  pull_request:
+    paths:
+      - "rockstar-manager/**"
+
+permissions:
+  contents: read
+
+jobs:
+  tests:
+    runs-on: ubuntu-latest
+    defaults:
+      run:
+        working-directory: rockstar-manager
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 20
+      - run: npm install
+      - run: npm test
+      - run: npm run check

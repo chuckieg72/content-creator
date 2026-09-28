@@ -1,0 +1,2 @@
+export const tools={github:{status:"connected_verified",capabilities:["read_repo","write_branch","pull_request"]},fal:{status:"code_ready_secret_unverified",secret:"FAL_KEY",capabilities:["video_generation"]},webResearch:{status:"available_in_manager_host",capabilities:["public_research"]},llms:{status:"runtime_dependent",providers:["chatgpt","claude","gemini","grok"]},publishing:{status:"approval_and_connector_required"},payments:{status:"not_configured_here"}};
+export const connected=()=>Object.entries(tools).filter(([,v])=>v.status==="connected_verified");
