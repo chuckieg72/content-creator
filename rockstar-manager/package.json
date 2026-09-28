@@ -5,8 +5,8 @@
   "type": "module",
   "scripts": {
     "check": "node src/healthcheck.js",
-    "demo": "node src/cli.js",
-    "job": "node src/cli.js"
+    "job": "node src/cli.js",
+    "test": "node --test"
   },
   "dependencies": {
     "@fal-ai/client": "^1.6.2"
